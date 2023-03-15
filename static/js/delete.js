@@ -27,10 +27,7 @@ const postAceInit = (hook, context) => {
   };
   /* init */
   if (padcookie.getPref('delete') === false) {
-    //$('#options-delete').val();
     $('#options-delete').attr('checked', false);
-    //$('#options-delete').attr('checked', false);
-    //$('#deletePadButton').attr('style', 'display: none !important');
     $('#deletePadButton').attr('style', 'display: inline !important');
     delete_setting.disable();
   } else if (padcookie.getPref('delete') === true) {
@@ -38,14 +35,6 @@ const postAceInit = (hook, context) => {
     $('#deletePadButton').attr('style', 'display: inline !important');
     delete_setting.enable();
   }
-
-  /*if ($('#options-delete').is(':checked')) {
-      console.log("options delete is checked");
-    delete_setting.enable();
-  } else {
-      console.log("options delete is not checked");
-    delete_setting.disable();
-  }*/
 
   /* on click */
   $('#options-delete').on('click', () => {
@@ -56,7 +45,7 @@ const postAceInit = (hook, context) => {
       padcookie.setPref('delete', false);
       delete_setting.disable();
     }
-    /*if (window.browser.chrome)*/ window.location.reload();
+    window.location.reload();
   });
 };
 exports.postAceInit = postAceInit;
