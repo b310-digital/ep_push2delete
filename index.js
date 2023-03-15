@@ -40,6 +40,10 @@ exports.handleMessage = function(hook_name, context, callback){
   }
 }
 
+exports.eejsBlock_mySettings = function(hook_name, args, cb) {
+  return cb();
+};
+
 exports.eejsBlock_mySettings.dropdowns = function(hook_name, args, cb) {
   let hiddenState = "display: inline !important;";
   const ejsPath = 'ep_push2delete/templates/delete_button.ejs';
